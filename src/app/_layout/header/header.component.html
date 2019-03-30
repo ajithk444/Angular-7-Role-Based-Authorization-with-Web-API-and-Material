@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar color="primary" #menu>
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span><a mat-button routerLink="">My App Name</a></span>
+    <span class="spacer"></span>
+    <a *ngIf="!isLoggedIn" mat-button routerLink="registration">Register</a>
+    <a *ngIf="!isLoggedIn" mat-button routerLink="login">Login</a>
+    <a *ngIf="isLoggedIn" mat-button routerLink="dashboard">Dashboard</a>
+    <a *ngIf="isLoggedIn" mat-button routerLink="tasks">Tasks</a>
+    <a *ngIf="isLoggedIn" mat-button routerLink="projects">Projects</a>
+    <a *ngIf="isLoggedIn" (click)="logout()" mat-button routerLink="">Logout</a>
+  </mat-toolbar-row>
+</mat-toolbar>
