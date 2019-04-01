@@ -2,13 +2,18 @@
 <mat-toolbar color="primary" #menu>
   <mat-toolbar-row>
     <!--  <span>HOME</span> -->
-    <span><a mat-button routerLink="">My App Name</a></span>
+    <span><a mat-button routerLink="dashboard">My App Name</a></span>
     <span class="spacer"></span>
+
     <a *ngIf="!isLoggedIn" mat-button routerLink="registration">Register</a>
     <a *ngIf="!isLoggedIn" mat-button routerLink="login">Login</a>
-    <a *ngIf="isLoggedIn" mat-button routerLink="dashboard">Dashboard</a>
+    <a *ngIf="isLoggedIn" mat-button routerLink="projectportal">Project Portal</a>
+    <mat-chip-list style="text-align: center;" *ngIf="isLoggedIn">
+      <mat-chip color="accent" selected>Project 1</mat-chip>
+    </mat-chip-list>
     <a *ngIf="isLoggedIn" mat-button routerLink="tasks">Tasks</a>
     <a *ngIf="isLoggedIn" mat-button routerLink="projects">Projects</a>
+    <a *ngIf="isLoggedIn" mat-button routerLink="profile">Profile</a>
     <a *ngIf="isLoggedIn" (click)="logout()" mat-button routerLink="">Logout</a>
   </mat-toolbar-row>
 </mat-toolbar>

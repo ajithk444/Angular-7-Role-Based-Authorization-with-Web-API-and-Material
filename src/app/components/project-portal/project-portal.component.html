@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>Project Portal</span>
+    <span class="spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Default">note</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Gantt">table_chart</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Calendar">calendar_today</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<button mat-stroked-button color="primary" (click)="addSwimlane()">Add Swimlane</button>
+<!-- <button mat-stroked-button color="accent" (click)="addTask()">Add Task</button> -->
+<button mat-stroked-button color="accent" (click)="newSticker()">Add Note</button> 
+ <button mat-stroked-button color="warn" (click)="deleteSelectedSticker()">Delete Note</button>
+
+<mat-grid-list cols="1" rowHeight="75px">
+  <mat-grid-tile *ngFor="let tile of tiles" colspan="1" rowspan="1" [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div id="testWhiteBoard">
+  <div *ngFor="let sticker of stickers">
+    <app-sticker [stickerID]="sticker.stickerID" [topValue]="sticker.topValue" [leftValue]="sticker.leftValue"
+      [stickerText]="sticker.stickerText" 
+      (selected)="onStickerSelected($event)">
+      Here comes the note
+    </app-sticker>
+  </div>
+</div>

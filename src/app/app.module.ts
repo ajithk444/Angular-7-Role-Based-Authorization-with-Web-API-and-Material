@@ -19,6 +19,12 @@ import { ProjectListComponent } from './components/project/project-list/project-
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './components/error/error.component';
+import { ProjectPortalComponent } from './components/project-portal/project-portal.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { StickerComponent } from './components/sticker/sticker.component';
+import { DraggableDirective } from './_directives/draggable.directive';
+import { SessionService } from './services/session.service';
+import { StickerService } from './services/sticker.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +37,11 @@ import { ErrorComponent } from './components/error/error.component';
     CreateTaskComponent,
     TaskListComponent,
     ProjectListComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProjectPortalComponent,
+    ProfileComponent,
+    StickerComponent,
+    DraggableDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +52,7 @@ import { ErrorComponent } from './components/error/error.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,SessionService,StickerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
