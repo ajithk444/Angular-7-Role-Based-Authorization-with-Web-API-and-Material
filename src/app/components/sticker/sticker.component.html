@@ -1,6 +1,12 @@
-<div ellzap-draggable [style.top]="topValue+'px'" [style.left]="leftValue+'px'" (click)="onSelected()">
-    <div class="stickertop">Note {{stickerID}}</div>
-    <textarea class="sticker">
+<div class="sticky" ellzap-draggable [style.top]="topValue+'px'" [style.left]="leftValue+'px'" (click)="onSelected()">
+  <!-- <div class="stickertop">Note {{stickerID}}</div>
+  <textarea class="sticker">
     {{stickerText}}
   </textarea>
-  </div>
+
+  <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+    {{stickerText}} </button> -->
+
+  <mat-icon matBadge="6" matBadgeColor="warn" color="primary">note</mat-icon>
+
+</div>

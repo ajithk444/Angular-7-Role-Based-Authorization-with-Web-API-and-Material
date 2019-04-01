@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StickerService } from 'src/app/services/sticker.service';
 import {Sticker} from '../../models/Sticker';
+
+import { StickerService } from 'src/app/services/sticker.service';
 
 export interface Tile {
   color: string;
